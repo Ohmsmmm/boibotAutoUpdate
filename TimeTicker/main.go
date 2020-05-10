@@ -29,7 +29,7 @@ func httpRequest(url string) ([]byte, error) {
 }
 
 func StatusUpdate() (Data,error) {
-	url := "http://127.0.0.1:8080/UpdateData"
+	url := "http://172.31.44.106:1080/UpdateData"
 	dataAsByte, err := httpRequest(url)  //byte array
 	if err != nil {
 		log.Fatal(err.Error())
@@ -49,7 +49,7 @@ type Data struct {
 }
 
 func main() {
-	c := time.Tick(1 * time.Minute)
+	c := time.Tick(12 * time.Hour)
 	status, err := StatusUpdate()
 	if err != nil {
 		log.Fatal(err.Error())
